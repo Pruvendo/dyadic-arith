@@ -1,0 +1,21 @@
+synopsis:     "Pruvendo arithmetic"
+description:  "Pruvendo arithmetic"
+name:         "pruvendo-arith"
+opam-version: "2.0"
+maintainer:   "team@pruvendo.com"
+authors:      "Pruvendo Team"
+homepage:     "git://git@vcs.modus-ponens.com:ton/pruvendo-arith.git"
+dev-repo:     "git+https://github.com/Pruvendo/opam-repo.git"
+bug-reports:  "git://git@vcs.modus-ponens.com:ton/pruvendo-arith.git"
+doc:          "https://pruvendo.github.io/pruvendo-arith"
+
+license:      "GPL 3"
+
+depends: [
+  "coq"           { >= "8.11.0" }
+  "dune"          { >= "2.8.0"  }
+  "pruvendo-base" { >= "0.2.0" }
+]
+
+
+build: [ "dune" "build" "-p" name "-j" jobs ]

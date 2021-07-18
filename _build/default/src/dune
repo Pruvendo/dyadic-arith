@@ -1,0 +1,6 @@
+(coq.theory
+ (name Pruvendo.Arith)
+ (package pruvendo-arith) 
+)
+
+(include_subdirs qualified)

@@ -1,0 +1,6 @@
+a: V x binary
+b: V y binary
+
+a = b
+
+

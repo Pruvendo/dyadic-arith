@@ -1,0 +1,40 @@
+# see https://docs.gitlab.com/ee/ci/yaml/README.html for all available options
+
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+before_script:
+#  - sudo apt-get update -qq && sudo apt-get install -y -qq coq
+  - coqc -v 
+  - whoami 
+  - eval $(opam env)
+  - opam update
+  - opam install --yes --deps-only .
+  - opam upgrade --yes $(cat pruvendo.recompile)
+
+
+after_script:
+  - echo "Finished"
+
+build1:
+  stage: build
+  script:
+    - dune build
+
+# test1:
+#   stage: test
+#   script:
+#       - echo "No tests yet"
+      #- echo "For example run a test suite"
+
+      #test2:
+      #stage: test
+      #script:
+      #- echo "Do another parallel test here"
+      #- echo "For example run a lint test"
+
+# deploy1:
+#   stage: deploy
+#   script:
+#       - echo "Nothing to deploy yet"

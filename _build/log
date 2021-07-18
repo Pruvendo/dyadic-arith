@@ -1,0 +1,311 @@
+# dune build
+# OCAMLPARAM: unset
+# Workspace root: /home/fibletype/devel/pruvendo-arith
+$ /usr/bin/nproc > /tmp/dune7a5dc8.output 2> /dev/null
+# Auto-detected concurrency: 8
+# disable binary cache
+$ /home/fibletype/.opam/coq-8.13/bin/ocamlc.opt -config > /tmp/dune131864.output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dyn
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path =
+#      Some External "/home/fibletype/.opam/coq-8.13/lib/toplevel"
+#  ; ocaml_bin = External "/home/fibletype/.opam/coq-8.13/bin"
+#  ; ocaml = Ok External "/home/fibletype/.opam/coq-8.13/bin/ocaml"
+#  ; ocamlc = External "/home/fibletype/.opam/coq-8.13/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/home/fibletype/.opam/coq-8.13/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/home/fibletype/.opam/coq-8.13/bin/ocamldep.opt"
+#  ; ocamlmklib =
+#      Ok External "/home/fibletype/.opam/coq-8.13/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" : "/home/fibletype/.opam/coq-8.13/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/home/fibletype/.opam/coq-8.13/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" : "/home/fibletype/devel/pruvendo-arith"
+#        ; "INSIDE_DUNE" :
+#            "/home/fibletype/devel/pruvendo-arith/_build/default"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/home/fibletype/devel/pruvendo-arith/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/home/fibletype/devel/pruvendo-arith/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/home/fibletype/devel/pruvendo-arith/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_path = [ External "/home/fibletype/.opam/coq-8.13/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.11.1"
+#      ; standard_library_default = "/home/fibletype/.opam/coq-8.13/lib/ocaml"
+#      ; standard_library = "/home/fibletype/.opam/coq-8.13/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "gcc"
+#      ; ocamlc_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-fPIC" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; ocamlopt_cflags =
+#          [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-fPIC" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; bytecomp_c_compiler =
+#          [ "gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-fPIC"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-ldl"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-fPIC"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; native_c_libraries = [ "-lm"; "-ldl" ]
+#      ; cc_profile = []
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "linux"
+#      ; asm = [ "as" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-pc-linux-gnu"
+#      ; target = "x86_64-pc-linux-gnu"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X028"
+#      ; cmi_magic_number = "Caml1999I028"
+#      ; cmo_magic_number = "Caml1999O028"
+#      ; cma_magic_number = "Caml1999A028"
+#      ; cmx_magic_number = "Caml1999Y028"
+#      ; cmxa_magic_number = "Caml1999Z028"
+#      ; ast_impl_magic_number = "Caml1999M028"
+#      ; ast_intf_magic_number = "Caml1999N028"
+#      ; cmxs_magic_number = "Caml1999D028"
+#      ; cmt_magic_number = "Caml1999T028"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default/src && /home/fibletype/.opam/coq-8.13/bin/coqdep -R . Pruvendo.Arith -dyndep opt Diadic/Arith.v) > _build/default/src/Diadic/Arith.v.d
+$ (cd _build/default/src && /home/fibletype/.opam/coq-8.13/bin/coqdep -R . Pruvendo.Arith -dyndep opt Diadic/Common.v) > _build/default/src/Diadic/Common.v.d
+$ (cd _build/default/src && /home/fibletype/.opam/coq-8.13/bin/coqdep -R . Pruvendo.Arith -dyndep opt Diadic/Lt.v) > _build/default/src/Diadic/Lt.v.d
+$ (cd _build/default/src && /home/fibletype/.opam/coq-8.13/bin/coqdep -R . Pruvendo.Arith -dyndep opt Diadic/Plus.v) > _build/default/src/Diadic/Plus.v.d
+$ (cd _build/default/src && /home/fibletype/.opam/coq-8.13/bin/coqdep -R . Pruvendo.Arith -dyndep opt Diadic/Basic.v) > _build/default/src/Diadic/Basic.v.d
+$ (cd _build/default/src && /home/fibletype/.opam/coq-8.13/bin/coqdep -R . Pruvendo.Arith -dyndep opt Diadic/Minus.v) > _build/default/src/Diadic/Minus.v.d
+$ (cd _build/default/src && /home/fibletype/.opam/coq-8.13/bin/coqdep -R . Pruvendo.Arith -dyndep opt Diadic/Z.v) > _build/default/src/Diadic/Z.v.d
+$ (cd _build/default/src && /home/fibletype/.opam/coq-8.13/bin/coqdep -R . Pruvendo.Arith -dyndep opt Diadic/ToNat.v) > _build/default/src/Diadic/ToNat.v.d
+$ (cd _build/default/src && /home/fibletype/.opam/coq-8.13/bin/coqdep -R . Pruvendo.Arith -dyndep opt Diadic/diadic.v) > _build/default/src/Diadic/diadic.v.d
+$ (cd _build/default/src && /home/fibletype/.opam/coq-8.13/bin/coqdep -R . Pruvendo.Arith -dyndep opt Diadic/sigma.v) > _build/default/src/Diadic/sigma.v.d
+$ (cd _build/default && /home/fibletype/.opam/coq-8.13/bin/coqc -q -w -native-compiler-disabled -native-compiler ondemand -R src Pruvendo.Arith src/Diadic/Common.v)
+>      = []
+>      : list nat
+>      = []
+>      : list nat
+>      = [1; 1]
+>      : list nat
+>      = []
+>      : list ?A
+>      = [1; 2]
+>      : list nat
+>      = []
+>      : list ?A
+>      = [2]
+>      : list nat
+>      = []
+>      : list nat
+>      = ([1], [])
+>      : list nat * list nat
+$ (cd _build/default && /home/fibletype/.opam/coq-8.13/bin/coqc -q -w -native-compiler-disabled -native-compiler ondemand -R src Pruvendo.Arith src/Diadic/Basic.v)
+$ (cd _build/default && /home/fibletype/.opam/coq-8.13/bin/coqc -q -w -native-compiler-disabled -native-compiler ondemand -R src Pruvendo.Arith src/Diadic/Z.v)
+$ (cd _build/default && /home/fibletype/.opam/coq-8.13/bin/coqc -q -w -native-compiler-disabled -native-compiler ondemand -R src Pruvendo.Arith src/Diadic/Lt.v)
+$ (cd _build/default && /home/fibletype/.opam/coq-8.13/bin/coqc -q -w -native-compiler-disabled -native-compiler ondemand -R src Pruvendo.Arith src/Diadic/diadic.v)
+> Notation "x >? y" := (Z.gtb x y) : Z_scope
+> 5 <? 5
+>      : bool
+> length
+>      : forall A : Type, list A -> nat
+> tl
+>      : forall A : Type, list A -> list A
+> Nat.eqb_refl: forall x : nat, (x =? x) = true
+> beq_nat_true: forall n m : nat, (n =? m) = true -> n = m
+> Nat.eqb_eq: forall n m : nat, (n =? m) = true <-> n = m
+> IHb: (length (tl (incr1 b)) =? length b) = true
+> Nat.eqb_refl: forall x : nat, (x =? x) = true
+> beq_nat_true: forall n m : nat, (n =? m) = true -> n = m
+> Nat.eqb_eq: forall n m : nat, (n =? m) = true <-> n = m
+> E1_head_incr:
+>   forall b : bilist, (length (incr1 (E1 :: b)) =? length (E1 :: b)) = true
+> Nat.lt_1_2: 1 < 2
+> lt_S_n: forall n m : nat, S n < S m -> n < m
+> lt_n_S: forall n m : nat, n < m -> S n < S m
+> Nat.succ_lt_mono: forall n m : nat, n < m <-> S n < S m
+> VectorSpec.nth_order_tl:
+>   forall (A : Type) (n k : nat) (v : VectorDef.t A (S n)) 
+>     (H : k < n) (HS : S k < S n),
+>   VectorDef.nth_order (VectorDef.tl v) H = VectorDef.nth_order v HS
+> Vector.nth_order_tl:
+>   forall (A : Type) (n k : nat) (v : VectorDef.t A (S n)) 
+>     (H : k < n) (HS : S k < S n),
+>   VectorDef.nth_order (VectorDef.tl v) H = VectorDef.nth_order v HS
+> Nat.lt_irrefl: forall x : nat, ~ x < x
+> H: length (E1 :: b) < length (E1 :: b)
+> Nat.lt_neq: forall n m : nat, n < m -> n <> m
+> lt_0_neq: forall n : nat, 0 < n -> 0 <> n
+> Nat.one_succ: 1 = 1
+> Nat.two_succ: 2 = 2
+> Nat.succ_inj: forall n1 n2 : nat, S n1 = S n2 -> n1 = n2
+> eq_add_S: forall n m : nat, S n = S m -> n = m
+> eq_S: forall x y : nat, x = y -> S x = S y
+> Nat.succ_inj_wd: forall n1 n2 : nat, S n1 = S n2 <-> n1 = n2
+> Heqb0: S (length (incr1 b)) = S (length b)
+> not_eq_S: forall n m : nat, n <> m -> S n <> S m
+> Nat.succ_inj_wd_neg: forall n m : nat, S n <> S m <-> n <> m
+> Forall
+>      : forall A : Type, (A -> Prop) -> list A -> Prop
+> Nat.lt_1_2: 1 < 2
+> lt_S_n: forall n m : nat, S n < S m -> n < m
+> lt_n_S: forall n m : nat, n < m -> S n < S m
+> Nat.succ_lt_mono: forall n m : nat, n < m <-> S n < S m
+> H: S (length b) < S (length (incr1 b))
+> Vector.nth_order_tl:
+>   forall (A : Type) (n k : nat) (v : VectorDef.t A (S n)) 
+>     (H : k < n) (HS : S k < S n),
+>   VectorDef.nth_order (VectorDef.tl v) H = VectorDef.nth_order v HS
+> VectorSpec.nth_order_tl:
+>   forall (A : Type) (n k : nat) (v : VectorDef.t A (S n)) 
+>     (H : k < n) (HS : S k < S n),
+>   VectorDef.nth_order (VectorDef.tl v) H = VectorDef.nth_order v HS
+> Nat.lt_1_2: 1 < 2
+> lt_S_n: forall n m : nat, S n < S m -> n < m
+> lt_n_S: forall n m : nat, n < m -> S n < S m
+> Nat.succ_lt_mono: forall n m : nat, n < m <-> S n < S m
+> H0: S (length b0) < S (length (incr1 b0))
+> Vector.nth_order_tl:
+>   forall (A : Type) (n k : nat) (v : VectorDef.t A (S n)) 
+>     (H : k < n) (HS : S k < S n),
+>   VectorDef.nth_order (VectorDef.tl v) H = VectorDef.nth_order v HS
+> VectorSpec.nth_order_tl:
+>   forall (A : Type) (n k : nat) (v : VectorDef.t A (S n)) 
+>     (H : k < n) (HS : S k < S n),
+>   VectorDef.nth_order (VectorDef.tl v) H = VectorDef.nth_order v HS
+> Nat.eqb_refl: forall x : nat, (x =? x) = true
+> beq_nat_true: forall n m : nat, (n =? m) = true -> n = m
+> Nat.eqb_eq: forall n m : nat, (n =? m) = true <-> n = m
+> Heqb: (length (incr1 b0) =? length b0) = true
+> E1_head_incr:
+>   forall b : bilist, (length (incr1 (E1 :: b)) =? length (E1 :: b)) = true
+> length_tl_incr_true:
+>   forall b : bilist,
+>   (length (incr1 b) =? length b) = true ->
+>   (length (tl (incr1 b)) =? length b) = false
+> nat_ind = 
+> fun (P : nat -> Prop) (f : P 0) (f0 : forall n : nat, P n -> P (S n)) =>
+> fix F (n : nat) : P n :=
+>   match n as n0 return (P n0) with
+>   | 0 => f
+>   | S n0 => f0 n0 (F n0)
+>   end
+>      : forall P : nat -> Prop,
+>        P 0 -> (forall n : nat, P n -> P (S n)) -> forall n : nat, P n
+>
+> Arguments nat_ind _%function_scope _ _%function_scope _%nat_scope
+> Nat.pow
+>      : nat -> nat -> nat
+>      = 2
+>      : nat
+> binary_lt_decr1
+>      : forall a b : bilist,
+>        binary_lt a b -> a = decr1 b \/ binary_lt a (decr1 b)
+>      = []
+>      : bilist
+>      = []
+>      : bilist
+>      = [E1; E1]
+>      : bilist
+>      = []
+>      : list ?A
+>      = [E1; E2]
+>      : list binary
+>      = []
+>      : list ?A
+>      = [E2]
+>      : list binary
+>      = []
+>      : list binary
+>      = ([E1], [])
+>      : bilist * bilist
+> Nat.sub_0_r: forall n : nat, n - 0 = n
+> length b
+>      : nat
+> app_nil_r: forall [A : Type] (l : list A), l ++ [] = l
+> Nat.eqb_refl: forall x : nat, (x =? x) = true
+> beq_nat_true: forall n m : nat, (n =? m) = true -> n = m
+> Nat.eqb_eq: forall n m : nat, (n =? m) = true <-> n = m
+> Heqb: (length (incr1 b0) =? length b0) = true
+> E1_head_incr:
+>   forall b : bilist, (length (incr1 (E1 :: b)) =? length (E1 :: b)) = true
+> length_tl_incr_true:
+>   forall b : bilist,
+>   (length (incr1 b) =? length b) = true ->
+>   (length (tl (incr1 b)) =? length b) = false
+> length_incr_tl:
+>   forall b : list binary,
+>   length b < length (incr1 b) -> length (tl (incr1 b)) = length b
+> Nat.add_0_r: forall n : nat, n + 0 = n
+> app_nil_l: forall [A : Type] (l : list A), [] ++ l = l
+>      = 11
+>      : nat
+>      = 14
+>      : nat
+$ (cd _build/default && /home/fibletype/.opam/coq-8.13/bin/coqc -q -w -native-compiler-disabled -native-compiler ondemand -R src Pruvendo.Arith src/Diadic/Plus.v)
+$ (cd _build/default && /home/fibletype/.opam/coq-8.13/bin/coqc -q -w -native-compiler-disabled -native-compiler ondemand -R src Pruvendo.Arith src/Diadic/sigma.v)
+> File "./src/Diadic/sigma.v", line 57, characters 0-130:
+> Error: Nested proofs are discouraged and not allowed by default. This error
+> probably means that you forgot to close the last "Proof." with "Qed." or
+> "Defined.". If you really intended to use nested proofs, you can do so by
+> turning the "Nested Proofs Allowed" flag on.
+>
+[1]
+$ (cd _build/default && /home/fibletype/.opam/coq-8.13/bin/coqc -q -w -native-compiler-disabled -native-compiler ondemand -R src Pruvendo.Arith src/Diadic/ToNat.v)
+>      = 11
+>      : nat
+>      = 14
+>      : nat
+$ (cd _build/default && /home/fibletype/.opam/coq-8.13/bin/coqc -q -w -native-compiler-disabled -native-compiler ondemand -R src Pruvendo.Arith src/Diadic/Minus.v)
+>      = [E2]
+>      : bilist
+>      = [E1]
+>      : bilist
+>      = [E2; E2]
+>      : bilist
+>      = []
+>      : bilist
+>      = [E2; E2]
+>      : bilist
+$ (cd _build/default && /home/fibletype/.opam/coq-8.13/bin/coqc -q -w -native-compiler-disabled -native-compiler ondemand -R src Pruvendo.Arith src/Diadic/Arith.v)
